@@ -1,0 +1,41 @@
+class Emp
+{
+    int eid;
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "eid=" + eid +
+                '}';
+    }
+}
+class stu
+{
+    int rollno;
+    String name;
+
+    public stu(int rollno, String name) {
+        this.rollno = rollno;
+        this.name = name;
+    }
+// we will override the toString method to not print the hashcode and print the content from object
+    // it will work for only stu class
+    // for different class different toString method will generate
+    @Override
+    public String toString() {
+        return  rollno +"," + name;
+
+    }
+}
+
+
+public class DSA241 {
+    public static void main(String[] args) {
+        // user defined class will print the hashcode
+        stu obj1 = new stu(24,"harman");
+        System.out.println(obj1);
+        // String class override toString method it will print the content
+        String a = "GLA";
+        System.out.println(a);
+    }
+}
